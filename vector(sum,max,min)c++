@@ -1,0 +1,19 @@
+#include<vector>
+#include <algorithm>
+#include <numeric>
+using namespace std;
+
+int sum(vector<int> numbers)
+{
+   
+  int sum;
+     sort(numbers.begin(),numbers.end()); 
+     sum= accumulate(numbers.begin(),numbers.end(),0);
+     int smallest_element = numbers.front();
+     int largest_element  = numbers.back();
+     if (smallest_element ==largest_element){
+      return sum-smallest_element;
+     }
+     else return  sum-smallest_element-largest_element;
+   
+}
